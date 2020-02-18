@@ -65,7 +65,7 @@
     },
   methods: {
     get_activity(){
-      axios.post("http://localhost:8080/api/notification",{
+      axios.post("http://localhost:3000/api/notification",{
                     "activitytype_id":this.$store.getters.activitytype_id
                 })
                     .then((response) => {
@@ -78,7 +78,7 @@
                     }) 
     },
     send(){
-      axios.post("http://localhost:8080/api/notification",{
+      axios.post("http://localhost:3000/api/notification",{
                     detail:"Testจากvue กิจกรรมใหม่มาแล้ว"
                 })
                     .then((response) => {

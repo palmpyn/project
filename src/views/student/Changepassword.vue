@@ -117,7 +117,7 @@ import {store} from '../../store/index'
             else{
                 if(this.newpass1.length>=8 && this.newpass2.length>=8){
                     if(this.newpass1==this.newpass2){
-                        axios.post('http://localhost:8080/api/updatepassword',
+                        axios.post('http://localhost:3000/api/updatepassword',
                         {
                             user_id:this.$store.getters.user_id,
                             password:this.newpass1

@@ -476,7 +476,7 @@ export default {
         stusend_yearall=stusend_yearall+'4'
         stusend_year4='1'
       }
-      axios.post('http://localhost:8080/api/updateactivity',
+      axios.post('http://localhost:3000/api/updateactivity',
           { activity_id: this.$route.params.activity_id,
             maintype_id:this.maintype_Selected.maintype_id,
             subtype_id:this.subtype_Selected.subtype_id,
@@ -509,7 +509,7 @@ export default {
     },
       getdetail(){
         console.log(this.$route.params.activity_id)
-                axios.post('http://localhost:8080/api/getactivitydetail',
+                axios.post('http://localhost:3000/api/getactivitydetail',
                 { activity_id: this.$route.params.activity_id }
                 ).then(response => {
                   this.$store.commit('set_activity_id',response.data[0].activity_id)
@@ -637,7 +637,7 @@ export default {
             }else{
               
               
-            axios.post('http://localhost:8080/api/deleteActivity',
+            axios.post('http://localhost:3000/api/deleteActivity',
                 { activity_id: this.$store.getters.activity_id }
                 ).then(response => {
                     console.log(response)

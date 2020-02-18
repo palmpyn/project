@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <v-app id="inspire">
-    <v-content>
+    <v-content class="bglog">
       <v-container
         fluid
         fill-height
@@ -15,18 +15,21 @@
             sm8
             md4
           >
+         <v-row>
+        <v-col >
+          <h1> RMUTP Activity</h1>
+        </v-col>
+      </v-row>
             <v-card class="elevation-12">
               <v-toolbar
-                color="primary"
-                dark
-                flat
+               class="toolbar log"
               >
                 <v-toolbar-title >เข้าสู่ระบบ</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-tooltip bottom>
                 </v-tooltip>
               </v-toolbar>
-              <v-card-text>
+              <v-card-text >
                 <v-form>
                   <v-text-field
                     label="Login"
@@ -80,7 +83,7 @@ export default {
     },
     methods:{
         LoginRouter(){
-            axios.post('http://localhost:8080/api/loginadmin',
+            axios.post('http://localhost:3000/api/loginadmin',
                 { 
                 username: this.username,
                 password: this.password 

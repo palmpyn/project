@@ -220,7 +220,7 @@ export default {
   },
   methods: {
     getdetail(){
-                axios.post('http://localhost:8080/api/getactivitydetail',
+                axios.post('http://localhost:3000/api/getactivitydetail',
                 { activity_id: this.$route.params.activity_id }
                 ).then(response => {
                   this.$store.commit('set_activity_id',response.data[0].activity_id)
@@ -311,7 +311,7 @@ export default {
             return date_act_start
           },
           check_regis_status(){
-            axios.post('http://localhost:8080/api/checkregis',
+            axios.post('http://localhost:3000/api/checkregis',
                 { 
                   user_id:this.body1,
                   activity_id:this.body2
@@ -329,7 +329,7 @@ export default {
             var datenow = new Date();
              datenow.setDate(datenow.getDate() + 1);
              datenow=datenow.toISOString().substr(0, 10)
-            axios.post('http://localhost:8080/api/regisactivity',
+            axios.post('http://localhost:3000/api/regisactivity',
                 { 
                   rdate:datenow,
                   user_id:this.body1,
@@ -348,7 +348,7 @@ export default {
            },
            unregisactivity(){
              if(this.password!=this.$store.getters.password){this.passcompare=false}else{
-            axios.post('http://localhost:8080/api/unregisactivity',
+            axios.post('http://localhost:3000/api/unregisactivity',
                 { 
                   user_id:this.body1,
                   activity_id:this.body2
@@ -368,7 +368,7 @@ export default {
            check_save_status(){
             console.log("user_id:"+this.body1)
             console.log("activity_id:"+this.body2)
-            axios.post('http://localhost:8080/api/checksave',
+            axios.post('http://localhost:3000/api/checksave',
                 { 
                   user_id:this.body1,
                   activity_id:this.body2
@@ -384,7 +384,7 @@ export default {
              var datenow = new Date();
              datenow.setDate(datenow.getDate() + 1);
              datenow=datenow.toISOString().substr(0, 10)
-            axios.post('http://localhost:8080/api/saveactivity',
+            axios.post('http://localhost:3000/api/saveactivity',
                 { 
                   sdate:datenow,
                   user_id:this.body1,
@@ -398,7 +398,7 @@ export default {
                 })
            },
            unsaveactivity(){
-            axios.post('http://localhost:8080/api/unsaveactivity',
+            axios.post('http://localhost:3000/api/unsaveactivity',
                 { 
                   user_id:this.body1,
                   activity_id:this.body2

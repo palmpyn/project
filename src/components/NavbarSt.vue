@@ -11,7 +11,7 @@
         <v-app-bar-nav-icon large class="btn nav icon"></v-app-bar-nav-icon>
       </v-btn>
 
-      <!-- <v-toolbar-title>Page title</v-toolbar-title> -->
+      <v-toolbar-title class="font title">RMUTP Activity</v-toolbar-title>
 
       <v-spacer></v-spacer>
       <h4 class="nametool">{{$store.getters.name}}  {{$store.getters.surname}}</h4>
@@ -37,6 +37,9 @@
         <v-list-item-group
           v-model="group"
         >
+          <!-- <v-list-item>
+            <v-list-item-title class="font title">RMUTP Activity</v-list-item-title>
+          </v-list-item> -->
           <v-list-item>
             <v-list-item-title @click="ProfileRouter()" class="fontlist i"> โปร์ไฟล์ </v-list-item-title>
           </v-list-item>
@@ -173,7 +176,7 @@ import {store} from '../store/index'
             if (this.$route.name !== 'homest') this.$router.push({name:'homest'})
         },
         getactivitylist(type_id){
-          axios.post('http://localhost:8080/api/getactivitylist',
+          axios.post('http://localhost:3000/api/getactivitylist',
                 {
                 activitytype_id:type_id,
                 }
@@ -226,7 +229,7 @@ import {store} from '../store/index'
             if(this.$route.name !== 'homest') this.$router.push({name:'homest'})
         },
         getsavelist(){
-          axios.post('http://localhost:8080/api/getsavelist',
+          axios.post('http://localhost:3000/api/getsavelist',
                 {
                 user_id:this.$store.getters.user_id
                 }
@@ -241,7 +244,7 @@ import {store} from '../store/index'
         })
         },
         getregislist(){
-          axios.post('http://localhost:8080/api/getregislist',
+          axios.post('http://localhost:3000/api/getregislist',
                 {
                 user_id:this.$store.getters.user_id
                 }

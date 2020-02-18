@@ -393,7 +393,7 @@ export default {
             if(datenow>=Date.parse(this.date_act_start.substr(0,10))){alert('กรุณาเลือกวันที่จัดกิจกรรม ขั้นต่ำเป็นวันพรุ่งนี้')}else
             if(datenow>Date.parse(this.date_regis_start.substr(0,10))||Date.parse(this.date_regis_start.substr(0,10))>=Date.parse(this.date_act_start.substr(0,10))){alert('กรุณาเลือกวันที่เปิดลงทะเบียน ขั้นต่ำเป็นวันนี้ และก่อนวันจัดกิจกรรม')}else
              if(datenow >Date.parse(this.date_regis_end.substr(0,10))||(Date.parse(this.date_regis_end.substr(0,10))<Date.parse(this.date_regis_start.substr(0,10)))||(Date.parse(this.date_regis_end.substr(0,10))>=Date.parse(this.date_act_start.substr(0,10)))){alert('กรุณาเลือกวันที่ปิดลงทะเบียน หลังวันเปิดลงทะเบียนและก่อนวันจัดกิจกรรม')}else{
-            axios.post('http://localhost:8080/api/createActivity',
+            axios.post('http://localhost:3000/api/createActivity',
                 { 
                   maintype_id:this.maintype_Selected.maintype_id,
                   subtype_id:this.subtype_Selected.subtype_id,

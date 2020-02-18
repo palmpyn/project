@@ -309,7 +309,7 @@ import axios from 'axios'
             if(stu_id_check){alert('กรุณากรอกรหัสนักศึกษาให้ถูกแบบฟอร์ม')}else
             if(card_id_check){alert('กรุณากรอกรหัสบัตรประชาชนให้ถูกแบบฟอร์ม')}else
             if(tel_check){alert('กรุณากรอกเบอร์โทรติดต่อใหม่ กรอกได้เพียงตัวเลข10หลัก')}else{
-            axios.post('http://localhost:8080/api/updateprofile',
+            axios.post('http://localhost:3000/api/updateprofile',
                 { user_id:this.$store.getters.user_id,
                   name:this.name,
                   surname:this.surname,

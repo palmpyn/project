@@ -13,7 +13,7 @@
         <v-app-bar-nav-icon class="btn nav icon" large></v-app-bar-nav-icon>
       </v-btn>
 
-      <!-- <v-toolbar-title>Page title</v-toolbar-title> -->
+      <v-toolbar-title class="font title">ADMIN RMUTP Activity </v-toolbar-title>
 
       <v-spacer></v-spacer>
       <v-btn icon  class="btn nav icon">
@@ -34,6 +34,9 @@
         <v-list-item-group
           v-model="group"
         >
+          <!-- <v-list-item>
+            <v-list-item-title class="font title">RMUTP Activity</v-list-item-title>
+          </v-list-item> -->
           <v-list-item>
             <v-list-item-title @click="ActivityRouterAll()" class="fontlist i">กิจกรรมทั้งหมด</v-list-item-title>
           </v-list-item>
@@ -141,7 +144,7 @@ import {store} from '../store/index'
             if (this.$route.name !== 'HomeAdmin') this.$router.push({name:'HomeAdmin'})
         },
         getactivitylist(type_id){
-          axios.post('http://localhost:8080/api/getactivitylist',
+          axios.post('http://localhost:3000/api/getactivitylist',
                 {
                 activitytype_id:type_id,
                 }

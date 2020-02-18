@@ -162,7 +162,7 @@ export default {
   },
   methods: {
     getdetail(){
-                axios.post('http://localhost:8080/api/getactivitydetail',
+                axios.post('http://localhost:3000/api/getactivitydetail',
                 { activity_id: this.$route.params.activity_id }
                 ).then(response => {
                   this.$store.commit('set_activity_id',response.data[0].activity_id)

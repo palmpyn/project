@@ -66,7 +66,7 @@ export default {
             OneSignal.getUserId(function(userId) {
               device_code=userId
               console.log("user_id in function :"+user_idinf)
-                    axios.post("http://localhost:8080/api/saveDevice",{
+                    axios.post("http://localhost:3000/api/saveDevice",{
                       "user_id":user_idinf,
                       "device_code":userId
                       }).then((response) => {

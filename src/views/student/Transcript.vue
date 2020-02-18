@@ -172,7 +172,7 @@ export default {
   }),
     methods:{
         gethourstandard(){
-            axios.get('http://localhost:8080/api/gethourstandard'
+            axios.get('http://localhost:3000/api/gethourstandard'
                 ).then(response => {
                   this.$store.commit('set_stand_university_act',response.data[0].stand_university_act)
                   this.$store.commit('set_stand_university_hour',response.data[0].stand_university_hour)
@@ -181,7 +181,7 @@ export default {
               })
         },
         gettranscript(){
-            axios.post('http://localhost:8080/api/gettranscript',{
+            axios.post('http://localhost:3000/api/gettranscript',{
                 user_id:this.$store.getters.user_id
             }).then(response => {
                 console.log(response)

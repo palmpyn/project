@@ -99,7 +99,7 @@ import axios from 'axios'
   },
   methods:{
       getreportsex(){
-        axios.post('http://localhost:8080/api/getreportsex',
+        axios.post('http://localhost:3000/api/getreportsex',
                 { activity_id: this.$route.params.activity_id }
                 ).then(response => {
                     console.log(response)
@@ -109,7 +109,7 @@ import axios from 'axios'
       },
       getreportlist(){
           console.log("ใน getrepostlist :"+this.$route.params.activity_id)
-          axios.post('http://localhost:8080/api/getreportlist',
+          axios.post('http://localhost:3000/api/getreportlist',
                 {
                 activity_id:this.$route.params.activity_id
                 }
